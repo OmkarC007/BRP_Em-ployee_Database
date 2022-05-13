@@ -1,0 +1,30 @@
+   
+'''''''''''''''''BRP Database''''''''''''''''''''
+
+create database BRP;
+show databases;
+use BRP;
+drop database BRP;
+CREATE TABLE employee_table(  
+    id int NOT NULL AUTO_INCREMENT,  
+    name varchar(45) NOT NULL,  
+    occupation varchar(35) NOT NULL,  
+    age int NOT NULL,  
+    PRIMARY KEY (id)  
+);  
+show tables;
+desc employee_table;
+ALTER TABLE employee_table
+ADD firstname varchar(20);  
+insert into employee_table values (1, "Omkar", "QA", 25, 20000);
+select * from employee_table;
+insert into employee_table(occupation,age,salary,name) values( "Engineer", 26, 25000,"Div");
+ALTER TABLE employee_table
+MODIFY firstname varchar(30) unique;
+ALTER TABLE employee_table  
+DROP COLUMN firstname; 
+ALTER TABLE employee_table  
+RENAME COLUMN salary to salaries;
+desc employee_table;
+select * from employee_table;
+select name, salaries from employee_table;
